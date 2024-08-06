@@ -36,9 +36,11 @@ about:
   home: https://pypi.python.org/pypi/Unidecode
   license: GPL-2.0-or-later
   license_file: LICENSE
+  license_family: GPL
   summary: ASCII transliterations of Unicode text
-  dev_url: https://www.tablix.org/~avian/git/unidecode.git
+  dev_url: https://github.com/avian2/unidecode/
+  doc_url: https://github.com/avian2/unidecode/blob/master/README.rst
 
 extra:
   recipe-maintainers:
-    - synapticarbors
+    - avian2
