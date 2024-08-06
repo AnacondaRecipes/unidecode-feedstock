@@ -11,18 +11,20 @@ source:
   sha256: cfdb349d46ed3873ece4586b96aa75258726e2fa8ec21d6f00a591d98806c2f4
 
 build:
-  noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: True  # [py<35]
   entry_points:
     - unidecode = unidecode.util:main
 
 requirements:
   host:
+    - python
     - pip
-    - python 2.7|>=3.5
+    - setuptools
+    - wheel
   run:
-    - python 2.7|>=3.5
+    - python
 
 test:
   imports:
