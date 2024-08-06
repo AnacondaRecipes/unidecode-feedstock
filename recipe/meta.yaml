@@ -33,6 +33,7 @@ test:
     - pip
     - pytest
   commands:
+    - pip check
     - unidecode --help
     - pytest tests -v
 
@@ -42,6 +43,8 @@ about:
   license_file: LICENSE
   license_family: GPL
   summary: ASCII transliterations of Unicode text
+  description: |
+    It often happens that you have text data in Unicode, but you need to represent it in ASCII. For example when integrating with legacy code that doesn't support Unicode, or for ease of entry of non-Roman names on a US keyboard, or when constructing ASCII machine identifiers from human-readable Unicode strings that should still be somewhat intelligible. A popular example of this is when making an URL slug from an article title.
   dev_url: https://github.com/avian2/unidecode/
   doc_url: https://github.com/avian2/unidecode/blob/master/README.rst
 
