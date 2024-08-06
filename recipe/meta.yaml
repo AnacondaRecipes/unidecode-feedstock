@@ -38,7 +38,7 @@ test:
     - pytest tests -v
 
 about:
-  home: https://pypi.python.org/pypi/Unidecode
+  home: https://pypi.org/project/Unidecode/
   license: GPL-2.0-or-later
   license_file: LICENSE
   license_family: GPL
