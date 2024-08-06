@@ -29,8 +29,12 @@ requirements:
 test:
   imports:
     - unidecode
+  requires:
+    - pip
+    - pytest
   commands:
     - unidecode --help
+    - pytest tests -v
 
 about:
   home: https://pypi.python.org/pypi/Unidecode
