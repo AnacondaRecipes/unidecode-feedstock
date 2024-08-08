@@ -42,7 +42,8 @@ test:
   commands:
     - pip check
     - unidecode --help
-    - PYTHONUTF8=1 pytest tests -v
+    - set PYTHONUTF8=1  # [win]
+    - pytest tests -v
 
 about:
   home: https://pypi.org/project/Unidecode/
