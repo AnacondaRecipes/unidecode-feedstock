@@ -3,11 +3,11 @@ index 844a6ec..7fadfb6 100644
 --- a/tests/test_utility.py
 +++ b/tests/test_utility.py
 @@ -32,7 +32,7 @@ def temp(content):
- 
+
  class TestUnidecodeUtility(unittest.TestCase):
- 
+
 -    TEST_UNICODE = u'\u9769'
 +    TEST_UNICODE = u'/u9769'
      TEST_ASCII = 'Ge '
- 
+
      def test_encoding_error(self):
