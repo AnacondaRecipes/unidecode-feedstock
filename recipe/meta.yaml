@@ -9,8 +9,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: cfdb349d46ed3873ece4586b96aa75258726e2fa8ec21d6f00a591d98806c2f4
-  patches:
-    - patches/0001-change_encoding.patch
+  # patches:
+  #   - patches/0001-change_encoding.patch
 
 build:
   number: 0
@@ -20,9 +20,9 @@ build:
     - unidecode = unidecode.util:main
 
 requirements:
-  build:
-    - patch     # [not win]
-    - m2-patch  # [win]
+  # build:
+  #   - patch     # [not win]
+  #   - m2-patch  # [win]
   host:
     - python
     - pip
@@ -42,7 +42,7 @@ test:
   commands:
     - pip check
     - unidecode --help
-    - pytest tests -v
+    - PYTHONUTF8=1 pytest tests -v
 
 about:
   home: https://pypi.org/project/Unidecode/
