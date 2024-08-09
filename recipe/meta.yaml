@@ -42,8 +42,12 @@ test:
   commands:
     - pip check
     - unidecode --help
-    - set PYTHONUTF8=1  # [win]
-    - pytest tests -v
+    # PYTHONIOENCODING=utf8
+    # Solves
+    #    "UnicodeEncodeError: 'charmap' codec can't encode character".
+    # See https://github.com/AnacondaRecipes/httpx-feedstock/pull/10/files for similar error.
+    - set PYTHONIOENCODING=utf8  # [win]
+    - pytest -v tests
 
 about:
   home: https://pypi.org/project/Unidecode/
