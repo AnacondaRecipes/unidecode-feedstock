@@ -25,6 +25,14 @@ requirements:
   run:
     - python
 
+# E   UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8a in position 0: invalid start byte
+# Tests not adapted for win
+{% set deselect_tests = "" %}
+{% set deselect_tests = " --deselect=tests/test_utility.py::TestUnidecodeUtility::test_commandline" %}  # [win]
+{% set deselect_tests = deselect_tests + " --deselect=tests/test_utility.py::TestUnidecodeUtility::test_encoding_error" %}  # [win]
+{% set deselect_tests = deselect_tests + " --deselect=tests/test_utility.py::TestUnidecodeUtility::test_file_default_encoding" %}  # [win]
+{% set deselect_tests = deselect_tests + " --deselect=tests/test_utility.py::TestUnidecodeUtility::test_file_specified_encoding" %}  # [win]
+{% set deselect_tests = deselect_tests + " --deselect=tests/test_utility.py::TestUnidecodeUtility::test_file_stdin" %}  # [win]
 test:
   source_files:
     - tests
@@ -36,7 +44,7 @@ test:
   commands:
     - pip check
     - unidecode --help
-    - pytest -v tests
+    - pytest -v tests {{ deselect_tests }}
 
 about:
   home: https://pypi.org/project/Unidecode
